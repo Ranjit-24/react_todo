@@ -15,14 +15,14 @@ export function Todocontainer(){
       todolist.map((todoval,key)=>{
         key++
         return(
-         <div>
+         <li key={"todo"+key}>
           <input type ="checkbox" id={"checkbox"+(key)} checked={todoval.marked} onChange={()=>updatetodo(false,key,!todoval.marked)}/>
           { changekey===key ? <input type="text" defaultValue={todoval.todoname} onKeyDown={(event)=>event.key=="Enter" && inputtab(event,key)}/>:
             <Strike todoval={todoval}/>
           }
-          <button id={"edit"+(key)} onClick={()=>setchangekey(key)}>edit</button>
+          <button id={"edit"+(key)} onClick={()=>setchangekey(key)} style={{opacity:changekey===key?"0.4":1}}>edit</button>
           <button onClick={()=>deletetodo(key)}>-</button>
-         </div>
+         </li>
       )})
     }
   </div>
