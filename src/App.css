@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 body{
+    font-family: 'Courier New', Courier, monospace;
     background-color:#15243f;
 }
 .App{
@@ -12,9 +13,11 @@ body{
     height: 100vh;
 }
 h1{
+    margin-top: 30px;
     color: white;
 }
 .input{
+    color: white;
     background-color: #434d65;
     width: 750px;
     height: 40px;
@@ -30,4 +33,3 @@ h1{
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
 }
-

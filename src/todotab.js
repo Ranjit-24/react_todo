@@ -6,7 +6,7 @@ export function Todotab(){
     return (
         <>
         { 
-        (changekey===key) ? <input type="text" au className="inputtodo" defaultValue={todoval.todoname} onKeyDown={(event)=>event.key=="Enter" && inputtab(event,key)}/>:
+        (changekey===key) ? <input type="text" className="inputtodo" defaultValue={todoval.todoname} onKeyDown={(event)=>event.key=="Enter" && inputtab(event,key)}/>:
         <p className="ptodo">
          {
          todoval.marked ? <span style={{textDecoration: 'line-through'}}>

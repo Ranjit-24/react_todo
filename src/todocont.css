@@ -1,7 +1,5 @@
 #todolist{
-
     width: 800px;
-    
 }
 #todolist > li{
     height: 50px;
@@ -14,4 +12,13 @@
     background-color: #ccbad7;
     border-radius: 16px;
 
+}
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+}
+.edit,.delete{
+    padding: 7px 14px;
+    border: none;
+    border-radius: 6px;
 }

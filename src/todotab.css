@@ -2,8 +2,12 @@
     flex-grow:0.9;
     background-color: inherit;
     border: none;
+    font-family: inherit;
+    font-size: large;
+    font-weight: 800;
 }
 .ptodo{
-    flex-grow: 0.9;
-    
+    font-size: large;
+    font-weight: 800;
+    flex-grow: 0.9;   
 }

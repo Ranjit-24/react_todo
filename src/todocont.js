@@ -22,10 +22,11 @@ export function Todocontainer(){
         return(
           <containercontext.Provider value={{changekey,key,todoval,inputtab}}>
          <li key={"todo"+key}>
-          <input type ="checkbox" id={"checkbox"+(key)} style={{opacity:changekey===key?"0.4":1}} checked={todoval.marked} onChange={()=>updatetodo(false,key,!todoval.marked)}/>
+          <input type ="checkbox" className="box" style={{opacity:changekey===key?"0.4":1}} checked={todoval.marked} onChange={()=>updatetodo(false,key,!todoval.marked)}/>
+          <span className="checkmark"></span>
           <Todotab />
-          <button id={"edit"+(key)} onClick={()=>setchangekey(key)} style={{opacity:changekey===key?"0.4":1}}>edit</button>
-          <button onClick={()=>changekey!==key && deletetodo(key)} style={{opacity:changekey===key?"0.4":1}}>-</button>
+          <button className="edit" onClick={()=>setchangekey(key)} style={{opacity:changekey===key?"0.4":1}}>edit</button>
+          <button className="delete" onClick={()=>changekey!==key && deletetodo(key)} style={{opacity:changekey===key?"0.4":1}}>-</button>
          </li>
          </containercontext.Provider>
       )})
