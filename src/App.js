@@ -37,8 +37,8 @@ function App() {
     <div className="App">
       <h1>Manage your Todos</h1>
       <input type="text" className="input" onKeyDown={(event)=>event.key=="Enter" && addnewtodo(todo)} onChange={(inputval)=>{newtodo(inputval.target.value)}}/>
-      <button type="sumbit" onClick ={()=>addnewtodo(todo)}  >add</button>
-      <Todocontainer list={todolist} delete_list={deletetodo}/>
+      <button type="sumbit" onClick ={()=>addnewtodo(todo)} >add</button>
+      <Todocontainer/>
       <button onClick={()=>addtodo([])}>x</button>
     </div>
     </todocontext.Provider>

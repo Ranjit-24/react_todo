@@ -1,15 +1,20 @@
 import "./todocont.css"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { todocontext } from "./App"
 import { Strike } from "./strike"
 export function Todocontainer(){
   const {todolist,deletetodo,updatetodo}=useContext(todocontext)
   let [changekey,setchangekey]=useState(0);
-  let [upnewtodo,setnewtodo]=useState('');
+  console.log(changekey)
   const inputtab=(event,key)=>{
       updatetodo(event.target.value,key)
       setchangekey(0)
   }
+  
+  useEffect(()=>{
+    todolist.length===0 && setchangekey(0)
+  },[todolist])
+
   return (
     <div id="todolist">{
       todolist.map((todoval,key)=>{
@@ -21,7 +26,7 @@ export function Todocontainer(){
             <Strike todoval={todoval}/>
           }
           <button id={"edit"+(key)} onClick={()=>setchangekey(key)} style={{opacity:changekey===key?"0.4":1}}>edit</button>
-          <button onClick={()=>deletetodo(key)}>-</button>
+          <button onClick={()=>changekey!==key && deletetodo(key)} style={{opacity:changekey===key?"0.4":1}}>-</button>
          </li>
       )})
     }
