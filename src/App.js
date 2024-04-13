@@ -4,10 +4,9 @@ import {useEffect, useState} from "react";
 import { createContext } from "react";
 export const todocontext = createContext();
 function App() {
-  let [todolist,addtodo]=useState(JSON.parse(localStorage.getItem("todo")));
+  let [todolist,addtodo]=useState(localStorage.getItem("todo")?JSON.parse(localStorage.getItem("todo")):[]);
   let [todo,newtodo]=useState('');
-  useEffect(()=>localStorage.setItem("todo",JSON.stringify(todolist)))  
-  
+  useEffect(()=>localStorage.setItem("todo",JSON.stringify(todolist)),[todolist])  
   let obj=(samplelist,val,mark)=>{
     return {
     id : samplelist.length===0?1:samplelist[samplelist.length-1].id +1,   
@@ -36,8 +35,10 @@ function App() {
     <todocontext.Provider value={{todo,newtodo,todolist,addtodo,addnewtodo,deletetodo,updatetodo}}>
     <div className="App">
       <h1>Manage your Todos</h1>
+      <div id="inputdiv">
       <input type="text" className="input" onKeyDown={(event)=>event.key=="Enter" && addnewtodo(todo)} onChange={(inputval)=>{newtodo(inputval.target.value)}}/>
-      <button type="sumbit" onClick ={()=>addnewtodo(todo)} >add</button>
+      <button type="sumbit" onClick ={()=>addnewtodo(todo)} >add</button>        
+      </div>
       <Todocontainer/>
       <button onClick={()=>addtodo([])}>x</button>
     </div>

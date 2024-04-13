@@ -1,7 +1,33 @@
-:root{
-    text-align: center;
+*,*::before,*::after{
+    box-sizing: border-box;
 }
-body
-{
-    
+body{
+    background-color:#15243f;
 }
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    gap: 20px;
+    height: 100vh;
+}
+h1{
+    color: white;
+}
+.input{
+    background-color: #434d65;
+    width: 750px;
+    height: 40px;
+    border: none;
+    padding: 5px 30px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+#inputdiv > button{
+    width: 50px;
+    height:40px;
+    border: none;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+

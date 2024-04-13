@@ -1,0 +1,9 @@
+.inputtodo{
+    flex-grow:0.9;
+    background-color: inherit;
+    border: none;
+}
+.ptodo{
+    flex-grow: 0.9;
+    
+}
